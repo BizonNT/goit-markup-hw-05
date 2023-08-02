@@ -272,20 +272,24 @@ a {
   margin-right: auto;
 }
 
-.footer-email-list {
+.footer-email-form {
   display: flex;
   gap: 24px;
 }
 
 .footer-email-input {
-  background-color: inherit;
+  background-color: transparent;
   width: 264px;
   height: 40px;
   padding: 8px 16px;
   border-radius: 4px;
   border: 1px solid var(--white);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white);
 }
 
 .footer-email-input::placeholder {
@@ -293,18 +297,19 @@ a {
 }
 
 .footer-email-input:focus {
-  color: var(--iris);
+  color: var(--cornflower);
   border-color: var(--iris);
 }
 
 .footer-email-button {
   display: flex;
-  gap: 16px;
-  padding: 8px 24px;
   justify-content: center;
   align-content: center;
+  min-width: 165px;
+  height: 40px;
+  padding: 8px 24px;
   background-color: var(--iris);
-  border: 0;
+  border: none;
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   transition: bbackground-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -324,6 +329,7 @@ a {
 }
 
 .footer-email-icon {
+  margin-left: 16px;
   fill: var(--white);
 }
 
@@ -703,29 +709,34 @@ a {
 
 .modal-form {
   width: 100%;
-  margin-bottom: 16px;
+}
+
+.modal-input-box {
+  margin-bottom: 8px;
 }
 
 .modal-input-label {
+  display: block;
   color: var(--lightslate);
   font-size: 12px;
-  line-height: 1.17; /* 116.667% */
+  line-height: 1.17;
   letter-spacing: 0.04em;
   margin-bottom: 4px;
 }
 
 .modal-input {
   position: relative;
-  margin-bottom: 8px;
 }
 
 .modal-input-field {
-  padding: 11px 38px;
   width: 100%;
+  height: 40px;
+  padding: 11px 38px;
   border-radius: 4px;
   border: 1px solid var(--navyblue-modal);
-  background-color: inherit;
+  background-color: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  outline: transparent;
   color: var(--navyblue-modal);
   font-size: 12px;
   line-height: 1.17;
@@ -751,12 +762,19 @@ a {
   fill: var(--iris);
 }
 
+.modal-input-textbox {
+  margin-bottom: 16px;
+}
+
 .modal-textatea {
   padding: 8px 16px;
   width: 100%;
+  height: 120px;
   border-radius: 4px;
   border: 1px solid var(--navyblue-modal);
-  background-color: inherit;
+  background-color: transparent;
+  outline: transparent;
+  resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--navyblue-modal);
   font-size: 12px;
@@ -770,11 +788,11 @@ a {
 }
 
 .modal-checkbox {
-  display: flex;
+  /* display: flex;
   justify-content: start;
   align-items: center;
   width: 100%;
-  gap: 8px;
+  gap: 8px; */
   margin-bottom: 24px;
 }
 
@@ -783,11 +801,32 @@ a {
   border-radius: 1px;
 } */
 
-.accept-policy-text {
+.accept-policy-label {
   color: var(--lightslate);
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+}
+
+.accept-checkbox {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border: 1px solid var(--navyblue-modal);
+  border-radius: 2px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  fill: transparent;
+}
+
+.accept-checkbox:checked {
+  background-color: var(--ocean);
+  border: none;
+  fill: var(--cloud);
 }
 
 .privacy-policy-link {
@@ -804,15 +843,16 @@ a {
 }
 
 .modal-form-button {
+  display: block;
   padding: 16px 32px;
   margin: 0 auto;
-  width: 169px;
+  min-width: 169px;
   height: 56px;
-  border: 0;
+  border: none;
   border-radius: 4px;
-  background: var(--iris);
+  background-color: var(--iris);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--white);
   font-size: 16px;
   font-weight: 500;
@@ -822,7 +862,7 @@ a {
 
 .modal-form-button:hover,
 .modal-form-button:focus {
-  background: var(--ocean);
+  background-color: var(--ocean);
 }
 
 /*  --------- Portfolio menu --------- */
