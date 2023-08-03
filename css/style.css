@@ -793,6 +793,8 @@ a {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
 }
 
 .accept-checkbox {
@@ -804,10 +806,15 @@ a {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: transparent;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  fill: transparent;
+}
+
+.accept-checkbox:hover,
+.modal-input-checkbox:focus + .accept-policy-label .accept-checkbox {
+border-color: var(--iris);
 }
 
 .modal-input-checkbox:checked + .accept-policy-label .accept-checkbox {
